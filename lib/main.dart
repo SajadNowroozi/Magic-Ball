@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,7 +38,11 @@ class _MagicBallState extends State<MagicBall> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: FlatButton(onPressed: (){}, child: Expanded(
+      child: FlatButton(onPressed: (){
+        setState((){
+          ChangeImage = Random().nextInt(5)+1;
+        });
+      }, child: Expanded(
         child: Image.asset('images/ball$ChangeImage.png'),
       )
       ),
